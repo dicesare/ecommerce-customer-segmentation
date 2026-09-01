@@ -23,14 +23,29 @@ jupyter lab notebooks/customer_segmentation.ipynb
 
 Raw Olist CSVs belong in `data/raw/` and are never committed. The repository contains no database credentials and does not require MariaDB.
 
+## Case-study gallery
+
+The original `master` and `dev` branches evolved from a single notebook into several focused experiments. This public version preserves that breadth in a readable sequence:
+
+| Study | Focus |
+|---|---|
+| [01 — RFM exploration](notebooks/01_rfm_exploration.ipynb) | recency, frequency, monetary definitions and edge cases |
+| [02 — Cluster selection](notebooks/02_cluster_selection.ipynb) | scaling, K-means, inertia and silhouette trade-offs |
+| [03 — Review signals](notebooks/03_review_signals.ipynb) | enrich segments with satisfaction evidence without leaking it into RFM |
+| [04 — Stability simulation](notebooks/04_stability_simulation.ipynb) | monitor assignment drift and choose a refresh cadence |
+| [05 — Data-access contract](notebooks/05_data_access_contract.ipynb) | replace embedded MariaDB credentials with an injected, validated table contract |
+| [End-to-end demo](notebooks/customer_segmentation.ipynb) | reproducible synthetic workflow |
+
 ## Engineering choices
 
 - deterministic feature dates and random seeds;
 - explicit validation of required columns;
 - separate RFM feature engineering and clustering;
 - synthetic tests that exercise customer histories safely;
+- cluster quality and temporal stability are treated as separate evaluation questions;
 - MIT-licensed code, with source datasets governed separately.
 
 ## License
 
 Released under the [MIT License](LICENSE).
+
