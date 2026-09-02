@@ -35,6 +35,22 @@ The original `master` and `dev` branches evolved from a single notebook into sev
 | [04 — Stability simulation](notebooks/04_stability_simulation.ipynb) | monitor assignment drift and choose a refresh cadence |
 | [05 — Data-access contract](notebooks/05_data_access_contract.ipynb) | replace embedded MariaDB credentials with an injected, validated table contract |
 | [End-to-end demo](notebooks/customer_segmentation.ipynb) | reproducible synthetic workflow |
+| [06 — Historical evidence](notebooks/06_historical_evidence.ipynb) | verified Olist scale, segment design and temporal-monitoring protocol |
+
+## Historical evidence and current competencies
+
+The executed research notebooks demonstrate a production-minded segmentation study:
+
+- **111,151 prepared transaction rows** and **95,380 unique customers** after joins and quality controls;
+- RFM construction with an explicit reference date, plus average review score as a fourth interpretation feature;
+- quintile scoring and ten actionable profiles: Champions, Loyal Customers, Potential Loyalists, New Customers, Promising, Need Attention, About to Sleep, At Risk, Cannot Lose and Hibernating;
+- KMeans experiments over scaled Recency, Frequency, Monetary and Score features;
+- temporal stability monitoring with **adjusted Rand index**, two-week periods and several initial customer cohorts;
+- comparison between a frozen initial model and models refitted as customer behaviour evolves.
+
+![Historical customer coverage](docs/assets/customer-coverage.svg)
+
+The [experiment inventory](docs/experiment_inventory.md) explains how all seven notebooks from `master` and `dev` are represented without publishing credentials or raw customer records.
 
 ## Engineering choices
 
